@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700;800&display=swap');
+
+
+body{
+    color: white;
+    font-size: 13px;
+    font-family: 'Noto Serif', serif;
+    background-color: #1e293b;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
