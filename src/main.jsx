@@ -6,7 +6,18 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Root from './Root.jsx'
 import Login from './Login.jsx'
 import Signup from './Signup.jsx'
+import AuthProvider from './provider/AuthProvider.jsx'
+import Dashboard from './Dashboard.jsx'
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+import TaskForm from './TaskForm.jsx'
+import About from './About.jsx'
+import Contact from './Contact.jsx'
 
+
+const queryClient = new QueryClient()
 
 const routes = createBrowserRouter([
   {
@@ -25,6 +36,22 @@ const routes = createBrowserRouter([
         path: '/signup',
         element: <Signup></Signup>
       },
+      {
+        path: '/about',
+        element: <About></About>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>
+      },
+      {
+        path: '/addTask',
+        element: <TaskForm></TaskForm>
+      },
     ]
   }
 ])
@@ -32,6 +59,10 @@ const routes = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={routes}></RouterProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={routes}></RouterProvider>
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

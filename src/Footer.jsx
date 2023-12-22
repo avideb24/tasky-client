@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © 2023 - All right reserved by <Link className="text-xl sm:text-2xl font-bold italic flex">Tas<span className="text-yellow-500">Ky</span></Link></p>
+                    <div className="flex items-end gap-1 text-xs sm:text-sm">Copyright © 2023 - All right reserved by <p className="text-xl">Tas<span className="text-yellow-500">Ky</span></p></div>
                 </aside>
             </footer>
         </div>
