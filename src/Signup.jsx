@@ -31,7 +31,7 @@ const Signup = () => {
                 text: 'SignUp Successfully!',
             });
             // user info post
-            axios.post('http://localhost:5000/users', userInfo)
+            axios.post('https://tasky-server-eight.vercel.app/users', userInfo)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({

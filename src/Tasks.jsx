@@ -16,7 +16,7 @@ const Tasks = () => {
     const { data: tasks = [], refetch } = useQuery({
         queryKey: ['tasks', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/tasks/${user?.email}`);
+            const res = await axios.get(`https://tasky-server-eight.vercel.app/tasks/${user?.email}`);
             return res.data;
         }
     })
@@ -30,7 +30,7 @@ const Tasks = () => {
 
     const handleChangeToOnGoing = id => {
         // console.log(id);
-        axios.patch(`http://localhost:5000/task/ongoing/${id}`)
+        axios.patch(`https://tasky-server-eight.vercel.app/task/ongoing/${id}`)
             .then(res => {
                 // console.log(res.data);
                 if (res.data.modifiedCount > 0) {
@@ -48,7 +48,7 @@ const Tasks = () => {
 
     const handleChangeToCompleted = id => {
         // console.log(id);
-        axios.patch(`http://localhost:5000/task/completed/${id}`)
+        axios.patch(`https://tasky-server-eight.vercel.app/task/completed/${id}`)
             .then(res => {
                 // console.log(res.data);
                 if (res.data.modifiedCount > 0) {

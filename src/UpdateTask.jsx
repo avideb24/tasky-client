@@ -24,7 +24,7 @@ const UpdateTask = () => {
         const addedTask = { title, description, deadline, priority: selectedType, status: "pending" , email: user?.email};
         console.log(addedTask);
 
-        axios.post('http://localhost:5000/tasks', addedTask)
+        axios.post('https://tasky-server-eight.vercel.app/tasks', addedTask)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({
